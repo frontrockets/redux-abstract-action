@@ -1,5 +1,5 @@
 {
-  "name": "redux-abstract-action",
+  "name": "@frontrockets/redux-abstract-action",
   "version": "0.0.1",
   "description": "Organize Actions in react-redux applications",
   "main": "src/index.js",
