@@ -8,15 +8,23 @@
   "license": "MIT",
   "scripts": {
     "lint": "prettier --check 'src/**/*.js'",
+    "size": "size-limit",
     "test": "jest"
   },
   "devDependencies": {
     "jest": "^24.8.0",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "size-limit": "^1.3.6"
   },
   "publishConfig": {
     "access": "public"
   },
+  "size-limit": [
+    {
+      "path": "src/index.js",
+      "limit": "45 ms"
+    }
+  ],
   "jest": {
     "testMatch": [
       "**/tests/**/*.[jt]s?(x)"

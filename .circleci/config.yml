@@ -23,5 +23,9 @@ jobs:
           when: always
 
       - run:
+          command: yarn size
+          when: always
+
+      - run:
           command: yarn test --runInBand
           when: always
