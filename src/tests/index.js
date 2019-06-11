@@ -7,7 +7,7 @@ describe('returns an object', () => {
     ['success', 'SUCCESS'],
   ]
 
-  properties.forEach((property) => {
+  properties.forEach(property => {
     const methodRefName = property[0]
     const typeRefName = property[1]
 
@@ -21,12 +21,18 @@ describe('returns an object', () => {
       it('returns correct type', () => {
         const action = createAbstractAction('Namespace/ActionName')
 
-        expect(action[methodRefName]()).toHaveProperty('type', `Namespace/ActionName/${typeRefName}`)
+        expect(action[methodRefName]()).toHaveProperty(
+          'type',
+          `Namespace/ActionName/${typeRefName}`,
+        )
       })
 
       it('returns type matched with exported', () => {
         const action = createAbstractAction('Namespace/ActionName')
-        expect(action[methodRefName]()).toHaveProperty('type', action[typeRefName])
+        expect(action[methodRefName]()).toHaveProperty(
+          'type',
+          action[typeRefName],
+        )
       })
 
       it('return empty payload by default', () => {
@@ -43,10 +49,13 @@ describe('returns an object', () => {
         const second = '$$second'
         const third = '$$third'
 
-        expect(action[methodRefName](first, second, third)).toHaveProperty('payload', {
-          first,
-          rest: [second, third],
-        })
+        expect(action[methodRefName](first, second, third)).toHaveProperty(
+          'payload',
+          {
+            first,
+            rest: [second, third],
+          },
+        )
       })
     })
   })
